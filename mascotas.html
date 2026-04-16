@@ -1,59 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis mascotas - Portafolio</title>
+    <title>Mi Galería de Mascotas Interactiva</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <header>
-        <h1>Mis mascotas</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Volver al Portafolio</a></li>
-            </ul>
-        </nav>
-    </header>
-        <main>
-            <section id="galeria-mascotas">
-    <h2>Mis Mascotas</h2>
-    <div class="contenedor-galeria"> <article class="mascota-tarjeta">
-             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKlY5giO4e0_exXFNHferEr9_WG_FuKoPHPA&s" alt="Foto de mi perro Benji">
-            <h3>Benji</h3>
-            <p>Es un golden retriever muy energico, le encanta salir a pasear y es muy obediente</p>
-        </article>
 
-        </div>
-</section>
-<section id="galeria-mascotas">
-    <h2>Mis Mascotas</h2>
-    <div class="contenedor-galeria"> <article class="mascota-tarjeta">
-             <img src="descarga (1).jpeg" alt="Foto de mi gato duki">
-            <h3>Duki</h3>
-            <p>Duki es un gato muy cariñoso, le encanta jugar con su hermano oreo, y tambien dormir mucho</p>
-        </article>
+   <header class="header-principal">
+    <div class="contenedor-titulo">
+        <a href="index.html" class="boton-volver">Volver</a>
+        <h1>Mis Mascotas</h1>
+    </div>
+    <p class="subtitulo">Haz clic en una mascota para conocerla</p>
+</header>
 
-        </div>
-</section>
-<section id="galeria-mascotas">
-<h2>Mis Mascotas</h2>
-<div class="contenedor-galeria"> <article class="mascota-tarjeta">
-        <img src="descarga.jpeg" alt="Foto de mi gato oreo">
+    <main>
+        <section class="contenedor-galeria">
 
-        <h3>Duki</h3>
-        <p>Es el hermano de duki, el es mas tranquilo que duki, pero aun asi le gusta jugar mucho.</p>
-        </article>
+            <div class="tarjeta-mascota" onclick="toggleMascota(this)">
+                <img src="descarga.jpeg" alt="Duki">
+                <div class="info-mascota">
+                    <span class="cerrar">&times;</span>
+                    <h3>Duki</h3>
+                    <p>Un gato curioso y juguetón, le encanta perseguir hilos y dormir.</p>
+                </div>
+            </div>
 
-        </div>
-</section>
-    
-        </main>
-        <footer>
-            <p>Pagina de mascotas</p>
-        </footer>
+            <div class="tarjeta-mascota" onclick="toggleMascota(this)">
+                <img src="descarga (1).jpeg" alt="Oreo">
+                <div class="info-mascota">
+                    <span class="cerrar">&times;</span>
+                    <h3>Oreo</h3>
+                    <p>Un gato Amigable siempre te recibirá con un ronroneo, es hermano de duki y le encanta jugar.</p>
+                </div>
+            </div>
 
+            <div class="tarjeta-mascota" onclick="toggleMascota(this)">
+                <img src="loro2.png" alt="Paco">
+                <div class="info-mascota">
+                    <span class="cerrar">&times;</span>
+                    <h3>Paco</h3>
+                    <p>Inteligente, le encanta imitar sonidos.</p>
+                </div>
+            </div>
+
+            <div class="tarjeta-mascota" onclick="toggleMascota(this)">
+                <img src="perro.jpeg" alt="Rocky">
+                <div class="info-mascota">
+                    <span class="cerrar">&times;</span>
+                    <h3>Rocky</h3>
+                    <p>Rocky es Leal y protector, ama jugar y dormir, tambien salir al parque.</p>
+                </div>
+            </div>
+
+            <div class="tarjeta-mascota" onclick="toggleMascota(this)">
+                <img src="perro 2.jpeg" alt="Luna">
+                <div class="info-mascota">
+                    <span class="cerrar">&times;</span>
+                    <h3>Luna</h3>
+                    <p>luna esta siempre feliz, ama comer y jugar con su hermano Rocky.</p>
+                </div>
+            </div>
+
+            <div class="tarjeta-mascota" onclick="toggleMascota(this)">
+                <img src="gato.jpeg" alt="Lucas">
+                <div class="info-mascota">
+                    <span class="cerrar">&times;</span>
+                    <h3>Lucas</h3>
+                    <p>Un gato muy especial, aunque es bastante independiente ama estar con sus hermanos.</p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script>
+        function toggleMascota(tarjeta) {
+   
+            const tarjetasAbiertas = document.querySelectorAll('.tarjeta-mascota.abierta');
+            tarjetasAbiertas.forEach(t => {
+                if (t !== tarjeta) {
+                    t.classList.remove('abierta');
+                }
+            });
+
+   
+            tarjeta.classList.toggle('abierta');
+        }
+    </script>
 
 </body>
 </html>

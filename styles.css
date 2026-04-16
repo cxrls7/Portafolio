@@ -2,182 +2,285 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333; 
+    background-color: #f0f2f5;
+    color: #333;
 }
 
 header {
-    background-color: #2c3e50; 
-    color: white;
-    padding: 1rem;
+    background-color: #334155;
+    padding: 20px 60px; 
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
 }
 
-nav ul {
-    display: flex;
-    list-style: none; 
+header h1 {
+    color: white;
+    font-size: 1.5rem;
 }
 
-nav ul li {
-    margin-left: 20px;
+nav ul {
+    display: flex; 
+    list-style: none;
+    gap: 15px;
 }
 
 nav a {
+    text-decoration: none;
     color: white;
-    text-decoration: none; 
+    background-color: rgba(255, 255, 255, 0.1); 
+    padding: 10px 20px;
+    border-radius: 20px;
     font-weight: bold;
-    transition: 0.3s; 
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
 }
 
 
 nav a:hover {
-    color: #3498db; /
+    background-color: white;
+    color: #334155;
+    transform: translateY(-3px); 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
+
+header {
+    background-color: #334155; 
+    color: white;
+    width: 100%;
+    padding: 30px 60px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.contenedor-titulo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2em;
+}
+
+
+.boton-volver {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #334155;
+    background-color: white;
+    padding: 8px 18px;
+    border-radius: 25px; 
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.boton-volver:hover {
+    background-color: #e2e8f0;
+    transform: translateX(-5px);
+}
+
+
+main {
+    width: 95%; 
+    max-width: 1400px; 
+    margin: 40px auto;
+}
+
+.contenedor-galeria {
+    display: grid;
+   
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+    width: 100%;
+    padding: 0; 
+}
+
+.tarjeta-mascota {
+    height: 350px; 
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.tarjeta-mascota img {
+    width: 100%;
+    height: 100%;
+    object-fit: adapt; 
+}
+
+
+.tarjeta-mascota:hover {
+    transform: translateY(-8px);
+}
+
+
+.info-mascota {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.7));
+    color: white;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 0;
+}
+
+.tarjeta-mascota.abierta .info-mascota {
+    bottom: 0;
+    opacity: 1;
+}
+
+.tarjeta-mascota.abierta img {
+    transform: scale(1.1);
+    filter: blur(2px);
+}
+
 
 section {
     padding: 40px;
-    margin: 20px auto;
-    max-width: 800px; 
+    margin: 40px auto;
+    max-width: 800px;
     background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
-}
-
-form {
-    display: flex;
-    flex-direction: column; 
+    border-radius: 20px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 input, textarea {
+    width: 100%;
     margin-bottom: 15px;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 10px; 
 }
 
 button {
     background-color: #27ae60;
     color: white;
-    padding: 10px;
+    padding: 12px;
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.mascota-ficha {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.mascota-ficha img {
-    width: 100%;
-    max-width: 300px; 
-    height: auto;
-    border-radius: 15px; 
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2); 
-    transition: transform 0.3s;
-}
-
-
-.mascota-ficha img:hover {
-    transform: scale(1.05);
-}
-
-/* TASK 2: Header y Navegación con Flexbox */
-header {
-    background-color: #2c3e50;
-    color: white;
-    padding: 20px 50px;
-    
-    display: flex;             /* Activamos Flexbox */
-    justify-content: space-between; /* Separa el título del menú */
-    align-items: center;       /* Centra todo verticalmente */
-}
-
-nav ul {
-    display: flex;             /* Los enlaces se ponen en fila */
-    list-style: none;
-    gap: 20px;                 /* Espacio uniforme entre enlaces */
-}
-
-/* TASK 3: Sección de Proyectos con Grid Layout */
-.grid-proyectos {
-    display: grid;             /* Activamos Grid */
-    /* Crea 3 columnas de igual tamaño (1fr = 1 fracción del espacio) */
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px;                 /* Espacio entre las tarjetas */
-    padding: 20px 0;
-}
-
-.tarjeta-proyecto {
-    background-color: #fff;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    transition: transform 0.3s;
-}
-
-.tarjeta-proyecto:hover {
-    transform: translateY(-5px); /* Pequeña animación al pasar el mouse */
-}
-
-/* TASK 4: Galería de Mascotas (Combinación) */
-.galeria-mascotas {
-    display: grid;
-    /* Esto hace que las columnas se ajusten solas según el tamaño de la pantalla */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-}
-
-/* Ejemplo de Flexbox dentro de la galería para los detalles */
-.mascota-ficha {
-    display: flex;
-    flex-direction: column;    /* Elementos uno sobre otro */
-    align-items: center;       /* Centrados horizontalmente */
-    background: #eee;
-    padding: 15px;
     border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.contenedor-galeria {
-    display: grid;
-    /* Esto crea columnas que se ajustan solas (mínimo 250px de ancho) */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px; /* El espacio entre cada mascota */
-    padding: 20px;
+button:hover {
+    background-color: #219150;
 }
 
-.mascota-tarjeta {
-    background: white;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    text-align: center; /* Centra el nombre y el texto */
-}
-.mascota-tarjeta img {
-    width: 100%;       /* Ocupa todo el ancho de la tarjeta */
-    height: 300px;     /* Dale un poco más de altura para que quepa */
-    object-fit: contain; /* ¡CAMBIA ESTO! Muestra la foto entera dentro del espacio */
-    background-color: #f0f0f0; /* Opcional: un color de fondo para los espacios vacíos */
-    border-radius: 8px 8px 0 0;
-}
-header {
+
+.contenedor-proyectos-acordeon {
     display: flex;
-    justify-content: space-between; /* Título a la izquierda, enlace a la derecha */
-    align-items: center;
-    padding: 10px 5%;
+    flex-direction: column; 
+    gap: 15px; 
+    width: 100%;
+    margin-top: 20px;
 }
-.contenedor-galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px; /* Esto separará a Benji de las otras mascotas */
+
+
+.pestaña-proyecto {
+    background-color: white;
+    border-radius: 12px; 
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+    transition: all 0.3s ease; 
+    cursor: pointer; 
+}
+
+
+.pestaña-proyecto:hover {
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+
+.cabecera-pestaña {
     padding: 20px;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    transition: background-color 0.3s ease;
+}
+
+.cabecera-pestaña h3 {
+    margin: 0;
+    font-size: 1.3em;
+    font-weight: bold; 
+    color: #334155; 
+}
+
+.icono-flecha {
+    font-size: 1.2em;
+    color: #64748b;
+    transition: transform 0.4s ease; 
+}
+
+.pestaña-proyecto.activa .cabecera-pestaña {
+    background-color: #f1f5f9; 
+}
+
+.pestaña-proyecto.activa .icono-flecha {
+    transform: rotate(90deg); 
+    color: #3498db; 
+}
+
+.contenido-pestaña {
+    max-height: 0; 
+    overflow: hidden; 
+    transition: all 0.5s ease; 
+    opacity: 0; 
+    padding: 0 20px; 
+    box-sizing: border-box; 
+}
+
+
+.pestaña-proyecto.activa .contenido-pestaña {
+    max-height: 500px; 
+    padding: 20px; 
+    opacity: 1; 
+    border-top: 1px solid #e2e8f0; 
+}
+
+
+.contenido-pestaña p {
+    margin: 0 0 15px;
+    font-size: 1.1em;
+    line-height: 1.6; 
+    color: #475569;
+}
+
+
+.boton-proyecto {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #27ae60; 
+    color: white;
+    text-decoration: none; 
+    border-radius: 8px; 
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.boton-proyecto:hover {
+    background-color: #219150; 
 }
