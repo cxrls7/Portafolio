@@ -1,3 +1,11 @@
+:root {
+    --color-primario: #334155;
+    --color-acento: #3b82f6;
+    --color-fondo: #f0f2f5;
+    --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
 
 * {
     margin: 0;
@@ -12,13 +20,6 @@ body {
     color: #333;
 }
 
-header {
-    background-color: #334155;
-    padding: 20px 60px; 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
 header h1 {
     color: white;
@@ -77,21 +78,21 @@ header h1 {
     display: inline-flex;
     align-items: center;
     text-decoration: none;
-    color: #334155;
+    color: var(--color-primario); 
     background-color: white;
-    padding: 8px 18px;
-    border-radius: 25px; 
+    padding: 0.8rem 1.5rem; 
+    border-radius: 25px;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 0.875rem;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
+    font-family: var(--fuente-principal); 
 }
 
 .boton-volver:hover {
-    background-color: #e2e8f0;
+    background-color: var(--color-fondo); 
     transform: translateX(-5px);
 }
-
 
 main {
     width: 95%; 
@@ -283,4 +284,37 @@ button:hover {
 
 .boton-proyecto:hover {
     background-color: #219150; 
+}
+
+html {
+    font-size: 16px; 
+}
+
+body {
+    font-size: 1rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+@media (min-width: 768px) {
+    .contenedor-proyectos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .galeria {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .contenedor-proyectos {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }

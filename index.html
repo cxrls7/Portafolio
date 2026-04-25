@@ -1,103 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio</title>
+    <title>Portafolio | Carlos Molina</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header> <b>Carlos Molina </b> 
-    <nav>
-        <ul>
-            
-            <li><a href="mascotas.html">Mis mascotas</a></li>
-            
-        </ul>
-    </header>
+    <header> 
+        <b>Carlos Molina</b> 
+        <nav>
+            <ul>
+                <li><a href="mascotas.html">Mis mascotas</a></li>
+            </ul>
+        </nav> </header>
 
     <main>
         <section id="sobre-mi">
-            <h2> Sobre mi</h2>
-            <p> Hola, soy un coder de <a href="https://riwi.io/">Riwi</a>, estoy aprendiendo a programar y me apasiona la tecnologia.</p>
+            <h2>Sobre mí</h2>
+            <p id="parrafo-descripcion">Hola, soy un coder de <a href="https://riwi.io/" target="_blank">Riwi</a>, estoy aprendiendo a programar y me apasiona la tecnología.</p>
         </section>
 
-    <section id="proyectos">
-    <h2>Mis Proyectos</h2>
-    <div class="contenedor-proyectos-acordeon">
+        <section id="proyectos">
+            <h2>Mis Proyectos</h2>
+            <div class="contenedor-proyectos-acordeon">
+                <div class="pestaña-proyecto activa">
+                    <div class="cabecera-pestaña">
+                        <h3>Proyecto 1</h3>
+                        <span class="icono-flecha">&#10095;</span> 
+                    </div>
+                    <div class="contenido-pestaña">
+                        <p>Sitio web personal con información sobre mí y mis proyectos.</p>
+                        <a href="#" class="boton-proyecto">Ver más</a>
+                    </div>
+                </div>
 
-        <div class="pestaña-proyecto activa" onclick="toggleProyecto(this)">
-            <div class="cabecera-pestaña">
-                <h3>Proyecto 1</h3>
-                <span class="icono-flecha">&#10095;</span> </div>
-            <div class="contenido-pestaña">
-                <p>Sitio web personal con información sobre mí y mis proyectos.</p>
-                <a href="#" class="boton-proyecto">Ver más</a>
+                <div class="pestaña-proyecto">
+                    <div class="cabecera-pestaña">
+                        <h3>Proyecto 2</h3>
+                        <span class="icono-flecha">&#10095;</span>
+                    </div>
+                    <div class="contenido-pestaña">
+                        <p>Calculadora que permite hacer operaciones básicas </p>
+                        <a href="#" class="boton-proyecto">Ver más</a>
+                    </div>
+                </div>
+
+                <div class="pestaña-proyecto">
+                    <div class="cabecera-pestaña">
+                        <h3>Proyecto 3</h3>
+                        <span class="icono-flecha">&#10095;</span>
+                    </div>
+                    <div class="contenido-pestaña">
+                        <p>Registro de ventas para una tienda </p>
+                        <a href="#" class="boton-proyecto">Ver más</a>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <div class="pestaña-proyecto" onclick="toggleProyecto(this)">
-            <div class="cabecera-pestaña">
-                <h3>Proyecto 2</h3>
-                <span class="icono-flecha">&#10095;</span>
-            </div>
-            <div class="contenido-pestaña">
-                <p>Calculadora que permite hacer operaciones básicas con interfaz gráfica.</p>
-                <a href="#" class="boton-proyecto">Ver más</a>
-            </div>
-        </div>
-
-        <div class="pestaña-proyecto" onclick="toggleProyecto(this)">
-            <div class="cabecera-pestaña">
-                <h3>Proyecto 3</h3>
-                <span class="icono-flecha">&#10095;</span>
-            </div>
-            <div class="contenido-pestaña">
-                <p>Registro de ventas para una tienda de ropa con panel de administración.</p>
-                <a href="#" class="boton-proyecto">Ver más</a>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<script>
-    function toggleProyecto(pestaña) {
-
-        const pestañasAbiertas = document.querySelectorAll('.pestaña-proyecto.activa');
-        pestañasAbiertas.forEach(p => {
-            if (p !== pestaña) {
-                p.classList.remove('activa');
-            }
-        });
-
-
-        pestaña.classList.toggle('activa');
-    }
-</script>
+        </section>
         
         <section id="Contacto">
             <form action="">
-            <h2> Contacto </h2>
-            <div>
-                 <label for="Nombre">Nombre: </label>
-                <input type="text" id="Nombre" name="user_name" placeholder="Tu nombre aqui">
-            </div>
-            <div>
-                <label for="correo">Correo electronico:</label>
-                <input type="email" id="Correo" name="user_email" placeholder="ejemplo@correo.com">
-            </div>
-            <div>
-                <label for="mensaje">Mensaje:</label>
-                <textarea name="user_mensaje" id="mensaje"></textarea>
-            </div>
-            <button type="enviar">Enviar mensaje</button>
+                <h2>Contacto</h2>
+                <div>
+                    <label for="Nombre">Nombre:</label>
+                    <input type="text" id="Nombre" name="user_name" placeholder="Tu nombre aquí">
+                </div>
+                <div>
+                    <label for="Correo">Correo electrónico:</label>
+                    <input type="email" id="Correo" name="user_email" placeholder="ejemplo@correo.com">
+                </div>
+                <div>
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea name="user_mensaje" id="mensaje"></textarea>
+                </div>
+                <button type="button" id="mi-boton">Enviar mensaje</button>
             </form>
         </section>
     </main>
+
     <footer>
-        <p> &copy; Hecho por Carlos Molina</p>
+        <p>&copy; 2026 Hecho por Carlos Molina</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>

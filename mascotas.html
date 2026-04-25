@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Galería de Mascotas Interactiva</title>
+    <title>Mi Galería de Mascotas </title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,25 +20,25 @@
         <section class="contenedor-galeria">
 
             <div class="tarjeta-mascota" onclick="toggleMascota(this)">
-                <img src="descarga.jpeg" alt="Duki">
+                <img src="img/descarga.jpeg" alt="Oreo">
                 <div class="info-mascota">
                     <span class="cerrar">&times;</span>
-                    <h3>Duki</h3>
+                    <h3>Oreo</h3>
                     <p>Un gato curioso y juguetón, le encanta perseguir hilos y dormir.</p>
                 </div>
             </div>
 
             <div class="tarjeta-mascota" onclick="toggleMascota(this)">
-                <img src="descarga (1).jpeg" alt="Oreo">
+                <img src="img/descarga (1).jpeg" alt="Duki">
                 <div class="info-mascota">
                     <span class="cerrar">&times;</span>
-                    <h3>Oreo</h3>
+                    <h3>Duki</h3>
                     <p>Un gato Amigable siempre te recibirá con un ronroneo, es hermano de duki y le encanta jugar.</p>
                 </div>
             </div>
 
             <div class="tarjeta-mascota" onclick="toggleMascota(this)">
-                <img src="loro2.png" alt="Paco">
+                <img src="img/loro2.png" alt="Paco">
                 <div class="info-mascota">
                     <span class="cerrar">&times;</span>
                     <h3>Paco</h3>
@@ -47,7 +47,7 @@
             </div>
 
             <div class="tarjeta-mascota" onclick="toggleMascota(this)">
-                <img src="perro.jpeg" alt="Rocky">
+                <img src="img/perro.jpeg" alt="Rocky">
                 <div class="info-mascota">
                     <span class="cerrar">&times;</span>
                     <h3>Rocky</h3>
@@ -56,7 +56,7 @@
             </div>
 
             <div class="tarjeta-mascota" onclick="toggleMascota(this)">
-                <img src="perro 2.jpeg" alt="Luna">
+                <img src="img/perro 2.jpeg " alt="Luna">
                 <div class="info-mascota">
                     <span class="cerrar">&times;</span>
                     <h3>Luna</h3>
@@ -65,7 +65,7 @@
             </div>
 
             <div class="tarjeta-mascota" onclick="toggleMascota(this)">
-                <img src="gato.jpeg" alt="Lucas">
+                <img src="img/gato.jpeg" alt="Lucas">
                 <div class="info-mascota">
                     <span class="cerrar">&times;</span>
                     <h3>Lucas</h3>
@@ -76,20 +76,6 @@
         </section>
     </main>
 
-    <script>
-        function toggleMascota(tarjeta) {
-   
-            const tarjetasAbiertas = document.querySelectorAll('.tarjeta-mascota.abierta');
-            tarjetasAbiertas.forEach(t => {
-                if (t !== tarjeta) {
-                    t.classList.remove('abierta');
-                }
-            });
-
-   
-            tarjeta.classList.toggle('abierta');
-        }
-    </script>
 
 </body>
 </html>
